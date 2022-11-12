@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  color: #426696;
+  font-weight: 600;
+  font-size: 3rem;
+  opacity: 0.8;
+}
+h2,
+p {
+  color: #658ec6;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+h3 {
+  color: #426696;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+::selection {
+  background-color: #6cdbeb;
+}
+
+@keyframes main {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+main {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  background: white;
+  min-height: 80vh;
+  width: 800px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  display: flex;
+  /* animation: main 3s ease; */
+  /* transform: scale(0.8); */
+}
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: 5%;
+  right: 15%;
+}
+.circle2 {
+  bottom: 5%;
+  left: 10%;
+}
+.dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+}
+.link {
+  display: flex;
+  margin: 2rem 0rem;
+  padding: 1rem 5rem;
+  align-items: center;
+}
+.link h2 {
+  padding: 0rem 2rem;
+}
+
+.games {
+  flex: 3;
+}
+
+.games {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@keyframes main {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 330px;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  margin: 2rem 0rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  /* transform: scale(1); */
+  /* justify-content: space-between; */
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-card-section {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: yellow; */
+  height: 30px;
+}
+
+.x-el {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  font-size: 1.5rem;
+  color: #658ec6;
+  cursor: pointer;
+}
+
+.heart-el {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #658ec6;
+}
+
+.top-middle-card-section {
+  height: 200px;
+  text-align: center;
+  /* background-color: black; */
+}
+
+.middle-card-section {
+  height: 200px;
+  /* background-color: blue; */
+  text-align: left;
+}
+
+.middle-card-section p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4f75aa;
+}
+
+.middle-card-section h2 {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.bottom-card-section {
+  height: 240px;
+  /* background-color: red; */
+}
+
+.question-answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-items {
+  padding: 0.8em;
+  margin: 1em;
+  border-radius: 1em;
+  border: none;
+  font-size: 1rem;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  color: #658ec6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.correctAnswer {
+  background-color: lightgreen;
+}
+
+.incorrectAnswer {
+  background-color: palevioletred;
+}
+
+/* SOURCES */
+/* https://getcssscan.com/css-box-shadow-examples */

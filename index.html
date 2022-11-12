@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Trivia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="glass">
+        <div class="dashboard">
+          <div class="user"></div>
+          <div class="links">
+            <div class="link">
+              <img src="./images/twitch.png" alt="" />
+              <h2>Apple</h2>
+            </div>
+            <div class="link">
+              <img src="./images/steam.png" alt="" />
+              <h2>Microsoft</h2>
+            </div>
+            <div class="link">
+              <img src="./images/upcoming.png" alt="" />
+              <h2>Google</h2>
+            </div>
+            <div class="link">
+              <img src="./images/library.png" alt="" />
+              <h2>Tesla</h2>
+            </div>
+          </div>
+          <div class="pro"></div>
+        </div>
+        <div class="games">
+          <div class="status">
+            <!-- <h1>Active Games</h1> -->
+            <!-- <input type="text" /> -->
+          </div>
+          <div class="cards">
+            <div id="card" class="card">
+              <div class="top-card-section">
+                <div id="x-el" class="x-el">x</div>
+                <div id="heart-el" class="heart-el">3</div>
+              </div>
+              <div id="img-el" class="top-middle-card-section">
+                <img style="height: 100%" src="./images/green.png" alt="" />
+              </div>
+              <div class="middle-card-section">
+                <div class="question-number">
+                  <p id="question-num">question 1 of 10</p>
+                </div>
+                <div class="question-el">
+                  <h2 id="question-el">Which person sued Apple Twice?</h2>
+                </div>
+                <div class="bottom-card-section">
+                  <div id="question-answers" class="question-answers">
+                    <button
+                      onclick="questionOneChoiceOne()"
+                      class="answer-one question-items"
+                      id="answer-one"
+                    >
+                      Elon Musk
+                    </button>
+                    <button
+                      onclick="questionOneChoiceTwo()"
+                      class="question-items"
+                      id="answer-two"
+                    >
+                      Carl Sagan
+                    </button>
+                    <button
+                      onclick="questionOneChoiceThree()"
+                      class="answerThree question-items"
+                      id="answer-three"
+                    >
+                      Kanye West
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
