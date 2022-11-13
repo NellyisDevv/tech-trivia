@@ -25,7 +25,7 @@ h3 {
 }
 
 ::selection {
-  background-color: #6cdbeb;
+  background-color: #c7f8ff;
 }
 
 @keyframes main {
@@ -237,5 +237,155 @@ main {
   background-color: palevioletred;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  margin: auto;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+.apple2 {
+  height: 5vh;
+  border-radius: 50%;
+}
+
+.congratz {
+  animation: fadeIn 3s;
+  height: 700px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 999;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.medal {
+  width: 400px;
+  margin: auto;
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.medal-img {
+  height: 40vh;
+}
+
+.medal-text {
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.48rem;
+  width: 350px;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.medal-text h2 {
+  color: #426696;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.medal-text p {
+  font-size: 1rem;
+}
+
+.medal-button {
+  margin-top: 20px;
+  position: relative;
+  top: 30px;
+  padding: 0.8em;
+  border: none;
+  background-color: #4f75aa;
+  color: white;
+  font-weight: bold;
+  border-radius: 3em;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-inline: 10px;
+  width: 140px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  transition: all 0.5s ease;
+  background-color: white;
+  color: #658ec6;
+}
+
+.medal-button:hover {
+  transition: all 0.5s ease;
+  background-color: white;
+  color: #658ec6;
+}
+
 /* SOURCES */
-/* https://getcssscan.com/css-box-shadow-examples */
+/* https://getcssscan.com/css-box-shadow-examples */ ;

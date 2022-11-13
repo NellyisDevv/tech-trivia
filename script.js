@@ -11,6 +11,8 @@ let answerOne = document.getElementById("answer-one");
 let answerTwo = document.getElementById("answer-two");
 let answerThree = document.getElementById("answer-three");
 let questionAnswers = document.getElementById("question-answers");
+const confetti = document.getElementById("confetti");
+const congratz = document.getElementsByClassName("congratz")[0];
 
 // Make the game not allow the user to choose the wrong answer more than one time
 
@@ -31,6 +33,8 @@ function lostGame() {
 function wonGame() {
   var audio = new Audio("./sounds/winGame.wav");
   audio.play();
+  confetti.style.display = "block";
+  congratz.style.display = "block";
 }
 
 function wrongAnswer() {
@@ -526,6 +530,7 @@ function questionTenChoiceOne() {
 function questionTenChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor = "LightGreen";
   correctAnswer();
+  startConfetti();
   setTimeout(function () {
     wonGame();
   }, 1000);

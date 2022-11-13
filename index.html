@@ -10,29 +10,35 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main>
+      <img
+        style="display: none"
+        id="confetti"
+        class="confetti"
+        src="6SSp.gif"
+        alt=""
+      />
       <section class="glass">
         <div class="dashboard">
           <div class="user"></div>
           <div class="links">
             <div class="link">
-              <img src="./images/twitch.png" alt="" />
+              <img class="apple2" src="./images/apple6.png" alt="" />
               <h2>Apple</h2>
             </div>
             <div class="link">
-              <img src="./images/steam.png" alt="" />
+              <img class="apple2" src="./images/windows2.png" alt="" />
               <h2>Microsoft</h2>
             </div>
             <div class="link">
-              <img src="./images/upcoming.png" alt="" />
+              <img class="apple2" src="./images/google.png" alt="" />
               <h2>Google</h2>
             </div>
             <div class="link">
-              <img src="./images/library.png" alt="" />
+              <img class="apple2" src="./images/tesla2.png" alt="" />
               <h2>Tesla</h2>
             </div>
           </div>
@@ -89,9 +95,26 @@
           </div>
         </div>
       </section>
+      <div id="congratz" style="display: none" class="congratz">
+        <div class="medal">
+          <img class="medal-img" src="./images/medal2.png" alt="" />
+        </div>
+        <div class="medal-text">
+          <h2>Congratulations!</h2>
+          <p>
+            You're an Apple Expert! Keep on the lookout for new and exciting
+            Tech-Trivia Challanges, and share this game with your Friends!
+          </p>
+          <a href="https://nellyisdev.com">
+            <button class="medal-button">SUPPORT</button>
+          </a>
+          <button onclick="playAgain()" class="medal-button">PLAY AGAIN</button>
+        </div>
+      </div>
     </main>
     <div class="circle1"></div>
     <div class="circle2"></div>
+    <script src="confetti.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
