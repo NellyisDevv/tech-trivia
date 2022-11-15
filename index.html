@@ -52,7 +52,7 @@
           <div class="cards">
             <div id="card" class="card">
               <div class="top-card-section">
-                <div id="x-el" class="x-el">x</div>
+                <div style="cursor: not-allowed" id="x-el" class="x-el">x</div>
                 <div id="heart-el" class="heart-el">3</div>
               </div>
               <div id="img-el" class="top-middle-card-section">
@@ -95,25 +95,45 @@
           </div>
         </div>
       </section>
-      <div id="congratz" style="display: none" class="congratz">
-        <div class="medal">
-          <img class="medal-img" src="./images/medal2.png" alt="" />
-        </div>
-        <div class="medal-text">
-          <h2>Congratulations!</h2>
-          <p>
-            You're an Apple Expert! Keep on the lookout for new and exciting
-            Tech-Trivia Challanges, and share this game with your Friends!
-          </p>
-          <a href="https://nellyisdev.com">
-            <button class="medal-button">SUPPORT</button>
-          </a>
-          <button onclick="playAgain()" class="medal-button">PLAY AGAIN</button>
-        </div>
-      </div>
+      <div class="circle1"></div>
+      <div class="circle2"></div>
     </main>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
+    <div id="congratz" style="display: none" class="congratz">
+      <div class="medal">
+        <img class="medal-img" src="./images/medal2.png" alt="" />
+      </div>
+      <div class="medal-text">
+        <h2 style="color: lightgreen">Congratulations!</h2>
+        <p>
+          You're an Apple Expert! Keep on the lookout for new and exciting
+          Tech-Trivia Challanges, and share this game with your Friends!
+        </p>
+        <a href="https://nellyisdev.com">
+          <button class="winBtn medal-button">SUPPORT</button>
+        </a>
+        <button onclick="playAgain()" class="winBtn medal-button">
+          PLAY AGAIN
+        </button>
+      </div>
+    </div>
+    <div id="youLose" style="display: none" class="congratz">
+      <div class="medal">
+        <img class="medal-img" src="./images/lostgame.png" alt="" />
+      </div>
+      <div class="medal-text">
+        <h2 style="color: rgb(255, 86, 86)">Trivia Failed!</h2>
+        <p>
+          Looks like you need more time to study, learn more about Apple and try
+          again!
+        </p>
+        <a href="https://nellyisdev.com">
+          <button class="loseBtn medal-button">SUPPORT</button>
+        </a>
+        <button onclick="playAgain()" class="loseBtn medal-button">
+          TRY AGAIN
+        </button>
+      </div>
+    </div>
     <script src="confetti.js"></script>
     <script src="script.js"></script>
   </body>

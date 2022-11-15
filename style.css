@@ -40,6 +40,11 @@ h3 {
 main {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  /* TEST CODE */
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  /* TEST CODE */
   background: linear-gradient(to right top, #65dfc9, #6cdbeb);
   display: flex;
   align-items: center;
@@ -56,7 +61,6 @@ main {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 2rem;
-  z-index: 2;
   backdrop-filter: blur(2rem);
   display: flex;
   /* animation: main 3s ease; */
@@ -74,6 +78,7 @@ main {
   width: 20rem;
   position: absolute;
   border-radius: 50%;
+  z-index: -999;
 }
 
 .circle1 {
@@ -84,6 +89,7 @@ main {
   bottom: 5%;
   left: 10%;
 }
+
 .dashboard {
   flex: 1;
   display: flex;
@@ -98,11 +104,13 @@ main {
   );
   border-radius: 2rem;
 }
+
 .link {
   display: flex;
   margin: 2rem 0rem;
   padding: 1rem 5rem;
   align-items: center;
+  cursor: pointer;
 }
 .link h2 {
   padding: 0rem 2rem;
@@ -175,6 +183,7 @@ main {
   font-size: 1.4rem;
   font-weight: 400;
   color: #658ec6;
+  cursor: none;
 }
 
 .top-middle-card-section {
@@ -282,7 +291,7 @@ main {
   }
 }
 
-.confetti {
+/* .confetti {
   position: absolute;
   top: 0;
   right: 0;
@@ -297,7 +306,7 @@ main {
   -moz-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;
   -ms-animation: fadeIn 5s;
-}
+} */
 
 .apple2 {
   height: 5vh;
@@ -305,7 +314,7 @@ main {
 }
 
 .congratz {
-  animation: fadeIn 3s;
+  animation: fadeIn 2.4s;
   height: 700px;
   width: 400px;
   background-color: white;
@@ -319,6 +328,8 @@ main {
   border-radius: 2em;
   display: flex;
   flex-direction: column;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .medal {
@@ -352,6 +363,7 @@ main {
 
 .medal-text p {
   font-size: 1rem;
+  color: #426696;
 }
 
 .medal-button {
@@ -360,8 +372,6 @@ main {
   top: 30px;
   padding: 0.8em;
   border: none;
-  background-color: #4f75aa;
-  color: white;
   font-weight: bold;
   border-radius: 3em;
   font-size: 1rem;
@@ -375,16 +385,14 @@ a {
   color: white;
 }
 
-a:hover {
-  transition: all 0.5s ease;
-  background-color: white;
-  color: #658ec6;
+.loseBtn {
+  background-color: rgb(255, 86, 86);
+  color: white;
 }
 
-.medal-button:hover {
-  transition: all 0.5s ease;
-  background-color: white;
-  color: #658ec6;
+.winBtn {
+  background-color: lightgreen;
+  color: white;
 }
 
 /* SOURCES */

@@ -13,6 +13,7 @@ let answerThree = document.getElementById("answer-three");
 let questionAnswers = document.getElementById("question-answers");
 const confetti = document.getElementById("confetti");
 const congratz = document.getElementsByClassName("congratz")[0];
+const youLose = document.getElementsByClassName("congratz")[1];
 
 // Make the game not allow the user to choose the wrong answer more than one time
 
@@ -21,20 +22,26 @@ const congratz = document.getElementsByClassName("congratz")[0];
 let hearts = 3;
 
 function lostGame() {
-  if (hearts === 2) {
-    alert("OH NO");
-  } else if (hearts === 1) {
-    alert("DONT GET ANOTHER WRONG!");
+  if (hearts === 1) {
+    var audio = new Audio("./sounds/suspense.wav");
+    audio.play();
+    setTimeout(() => {
+      audio.pause();
+    }, 2000);
   } else if (hearts === 0) {
-    card.style.display = "none";
+    youLose.style.display = "block";
+    setTimeout(() => {
+      var audio = new Audio("./sounds/failedGame.wav");
+      audio.play();
+    }, 500);
   }
 }
 
 function wonGame() {
   var audio = new Audio("./sounds/winGame.wav");
   audio.play();
-  confetti.style.display = "block";
   congratz.style.display = "block";
+  startConfetti();
 }
 
 function wrongAnswer() {
@@ -45,9 +52,9 @@ function wrongAnswer() {
 }
 
 function correctAnswer() {
-  answerOne.disabled = true;
-  answerTwo.disabled = true;
-  answerThree.disabled = true;
+  document.querySelectorAll("button")[0].disabled = true;
+  document.querySelectorAll("button")[1].disabled = true;
+  document.querySelectorAll("button")[2].disabled = true;
   hearts++;
   heartEl.innerHTML = hearts;
   var audio = new Audio("./sounds/correct.wav");
@@ -59,6 +66,7 @@ function correctAnswer() {
 function questionOneChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -74,6 +82,7 @@ function questionOneChoiceTwo() {
 function questionOneChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -91,6 +100,7 @@ function questionTwoChoiceOne() {
 function questionTwoChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[1].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -98,6 +108,7 @@ function questionTwoChoiceTwo() {
 function questionTwoChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -138,6 +149,7 @@ India
 function questionThreeChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -153,6 +165,7 @@ function questionThreeChoiceTwo() {
 function questionThreeChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -193,6 +206,7 @@ Tim Cook
 function questionFourChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -200,6 +214,7 @@ function questionFourChoiceOne() {
 function questionFourChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[1].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -256,6 +271,7 @@ function questionFiveChoiceOne() {
 function questionFiveChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[1].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -263,6 +279,7 @@ function questionFiveChoiceTwo() {
 function questionFiveChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -303,6 +320,7 @@ TCL
 function questionSixChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -310,6 +328,7 @@ function questionSixChoiceOne() {
 function questionSixChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[1].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -358,6 +377,7 @@ Apple Pippin
 function questionSevenChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -373,6 +393,7 @@ function questionSevenChoiceTwo() {
 function questionSevenChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -413,6 +434,7 @@ Jeff Bezos
 function questionEightChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -420,6 +442,7 @@ function questionEightChoiceOne() {
 function questionEightChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[1].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -476,6 +499,7 @@ function questionNineChoiceOne() {
 function questionNineChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[1].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -483,6 +507,7 @@ function questionNineChoiceTwo() {
 function questionNineChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -523,6 +548,7 @@ id="answer-three"
 function questionTenChoiceOne() {
   document.querySelectorAll("button")[0].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[0].disabled = true;
   wrongAnswer();
   lostGame();
 }
@@ -530,7 +556,6 @@ function questionTenChoiceOne() {
 function questionTenChoiceTwo() {
   document.querySelectorAll("button")[1].style.backgroundColor = "LightGreen";
   correctAnswer();
-  startConfetti();
   setTimeout(function () {
     wonGame();
   }, 1000);
@@ -539,6 +564,7 @@ function questionTenChoiceTwo() {
 function questionTenChoiceThree() {
   document.querySelectorAll("button")[2].style.backgroundColor =
     "PaleVioletRed";
+  document.querySelectorAll("button")[2].disabled = true;
   wrongAnswer();
   lostGame();
 }
