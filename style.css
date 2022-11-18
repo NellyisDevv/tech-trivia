@@ -64,7 +64,7 @@ main {
   backdrop-filter: blur(2rem);
   display: flex;
   /* animation: main 3s ease; */
-  /* transform: scale(0.8); */
+  /* transform: scale(0.9); */
 }
 .circle1,
 .circle2 {

@@ -17,6 +17,12 @@ const youLose = document.getElementsByClassName("congratz")[1];
 
 // Make the game not allow the user to choose the wrong answer more than one time
 
+// playAgain()
+
+function playAgain() {
+  location.reload();
+}
+
 // GAME RULES
 
 let hearts = 3;
