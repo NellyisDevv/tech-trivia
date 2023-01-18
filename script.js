@@ -1,130 +1,126 @@
 // Find out if you can make a sound if the user gets the question correct and also check to see if you can animate the cards in and out instead of having a regular load in and out transition
 // Microsoft Google and Tesla Trivia will be released alongside half life 3
 
-let card = document.getElementById("card");
-let imgEl = document.getElementById("img-el");
-let xEl = document.getElementById("x-el");
-let heartEl = document.getElementById("heart-el");
-let questionNum = document.getElementById("question-num");
-let questionEl = document.getElementById("question-el");
-let answerOne = document.getElementById("answer-one");
-let answerTwo = document.getElementById("answer-two");
-let answerThree = document.getElementById("answer-three");
-let questionAnswers = document.getElementById("question-answers");
-const confetti = document.getElementById("confetti");
-const congratz = document.getElementsByClassName("congratz")[0];
-const youLose = document.getElementsByClassName("congratz")[1];
+let card = document.getElementById('card')
+let imgEl = document.getElementById('img-el')
+let xEl = document.getElementById('x-el')
+let heartEl = document.getElementById('heart-el')
+let questionNum = document.getElementById('question-num')
+let questionEl = document.getElementById('question-el')
+let answerOne = document.getElementById('answer-one')
+let answerTwo = document.getElementById('answer-two')
+let answerThree = document.getElementById('answer-three')
+let questionAnswers = document.getElementById('question-answers')
+const confetti = document.getElementById('confetti')
+const congratz = document.getElementsByClassName('congratz')[0]
+const youLose = document.getElementsByClassName('congratz')[1]
 
 // Make the game not allow the user to choose the wrong answer more than one time
 
 // playAgain()
 
 function playAgain() {
-  location.reload();
+  location.reload()
 }
 
 // GAME RULES
 
-let hearts = 3;
+let hearts = 3
 
 function lostGame() {
   if (hearts === 1) {
-    var audio = new Audio("./sounds/suspense.wav");
-    audio.play();
+    var audio = new Audio('./sounds/suspense.wav')
+    audio.play()
     setTimeout(() => {
-      audio.pause();
-    }, 2000);
+      audio.pause()
+    }, 2000)
   } else if (hearts === 0) {
-    youLose.style.display = "block";
+    youLose.style.display = 'block'
     setTimeout(() => {
-      var audio = new Audio("./sounds/failedGame.wav");
-      audio.play();
-    }, 500);
+      var audio = new Audio('./sounds/failedGame.wav')
+      audio.play()
+    }, 500)
   }
 }
 
 function wonGame() {
-  var audio = new Audio("./sounds/winGame.wav");
-  audio.play();
-  congratz.style.display = "block";
-  startConfetti();
+  var audio = new Audio('./sounds/winGame.wav')
+  audio.play()
+  congratz.style.display = 'block'
+  startConfetti()
 }
 
 function wrongAnswer() {
-  hearts--;
-  heartEl.innerHTML = hearts;
-  var audio = new Audio("./sounds/wrongAnswer.wav");
-  audio.play();
+  hearts--
+  heartEl.innerHTML = hearts
+  var audio = new Audio('./sounds/wrongAnswer.wav')
+  audio.play()
 }
 
 function correctAnswer() {
-  document.querySelectorAll("button")[0].disabled = true;
-  document.querySelectorAll("button")[1].disabled = true;
-  document.querySelectorAll("button")[2].disabled = true;
-  hearts++;
-  heartEl.innerHTML = hearts;
-  var audio = new Audio("./sounds/correct.wav");
-  audio.play();
+  document.querySelectorAll('button')[0].disabled = true
+  document.querySelectorAll('button')[1].disabled = true
+  document.querySelectorAll('button')[2].disabled = true
+  hearts++
+  heartEl.innerHTML = hearts
+  var audio = new Audio('./sounds/correct.wav')
+  audio.play()
 }
 
 // QUESTION ONE OF APPLE TRIVIA
 
 function questionOneChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionOneChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionTwo();
-  }, 1000);
+    questionTwo()
+  }, 1000)
 }
 
 function questionOneChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 // QUESTION TWO OF APPLE TRIVIA
 
 function questionTwoChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionThree();
-  }, 1000);
+    questionThree()
+  }, 1000)
 }
 
 function questionTwoChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[1].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[1].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionTwoChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionTwo() {
-  questionNum.innerText = `question 2 of 10`;
-  questionEl.innerText = `Which Country is Apple Worth More Than?`;
+  questionNum.innerText = `question 2 of 10`
+  questionEl.innerText = `Which Country is Apple Worth More Than?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/cash.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionTwoChoiceOne()"
@@ -147,41 +143,39 @@ id="answer-three"
 >
 India
 </button>
-`;
+`
 }
 
 // QUESTION THREE OF APPLE TRIVIA
 
 function questionThreeChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionThreeChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionFour();
-  }, 1000);
+    questionFour()
+  }, 1000)
 }
 
 function questionThreeChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionThree() {
-  questionNum.innerText = `question 3 of 10`;
-  questionEl.innerText = `Who was The Co-founder of Apple?`;
+  questionNum.innerText = `question 3 of 10`
+  questionEl.innerText = `Who was The Co-founder of Apple?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/ceo.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionThreeChoiceOne()"
@@ -204,41 +198,39 @@ id="answer-three"
 >
 Tim Cook
 </button>
-`;
+`
 }
 
 // QUESTION FOUR OF APPLE TRIVIA
 
 function questionFourChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionFourChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[1].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[1].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionFourChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionFive();
-  }, 1000);
+    questionFive()
+  }, 1000)
 }
 
 function questionFour() {
-  questionNum.innerText = `question 4 of 10`;
-  questionEl.innerText = `Who Apple product can stop a Bullet?`;
+  questionNum.innerText = `question 4 of 10`
+  questionEl.innerText = `Who Apple product can stop a Bullet?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/bullet.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionFourChoiceOne()"
@@ -261,41 +253,39 @@ id="answer-three"
 >
 Macbook Pro
 </button>
-`;
+`
 }
 
 // QUESTION FIVE APPLE TRIVIA
 
 function questionFiveChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionSix();
-  }, 1000);
+    questionSix()
+  }, 1000)
 }
 
 function questionFiveChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[1].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[1].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionFiveChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionFive() {
-  questionNum.innerText = `question 5 of 10`;
-  questionEl.innerText = `Which Company Makes Retina Displays?`;
+  questionNum.innerText = `question 5 of 10`
+  questionEl.innerText = `Which Company Makes Retina Displays?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/phone.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionFiveChoiceOne()"
@@ -318,41 +308,39 @@ id="answer-three"
 >
 TCL
 </button>
-`;
+`
 }
 
 // QUESTION SIX OF APPLE TRIVIA
 
 function questionSixChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionSixChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[1].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[1].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionSixChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionSeven();
-  }, 1000);
+    questionSeven()
+  }, 1000)
 }
 
 function questionSix() {
-  questionNum.innerText = `question 6 of 10`;
-  questionEl.innerText = `Which Gaming System Did Apple Make?`;
+  questionNum.innerText = `question 6 of 10`
+  questionEl.innerText = `Which Gaming System Did Apple Make?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/game.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionSixChoiceOne()"
@@ -375,41 +363,39 @@ id="answer-three"
 >
 Apple Pippin
 </button>
-`;
+`
 }
 
 // QUESTION SEVEN OF APPLE TRIVIA
 
 function questionSevenChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionSevenChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionEight();
-  }, 1000);
+    questionEight()
+  }, 1000)
 }
 
 function questionSevenChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionSeven() {
-  questionNum.innerText = `question 7 of 10`;
-  questionEl.innerText = `Who Invested $150 Million In Apple?`;
+  questionNum.innerText = `question 7 of 10`
+  questionEl.innerText = `Who Invested $150 Million In Apple?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/invest.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionSevenChoiceOne()"
@@ -432,41 +418,39 @@ id="answer-three"
 >
 Jeff Bezos
 </button>
-`;
+`
 }
 
 // QUESTION EIGHT OF APPLE TRIVIA
 
 function questionEightChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionEightChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[1].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[1].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionEightChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionNine();
-  }, 1000);
+    questionNine()
+  }, 1000)
 }
 
 function questionEight() {
-  questionNum.innerText = `8 of 10`;
-  questionEl.innerText = `Which CEO Banned Pets on Campus?`;
+  questionNum.innerText = `8 of 10`
+  questionEl.innerText = `Which CEO Banned Pets on Campus?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/dog.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionEightChoiceOne()"
@@ -489,41 +473,39 @@ id="answer-three"
 >
 Steve Jobs
 </button>
-`;
+`
 }
 
 // QUESTION NINE OF APPLE TRIVIA
 
 function questionNineChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    questionTen();
-  }, 1000);
+    questionTen()
+  }, 1000)
 }
 
 function questionNineChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[1].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[1].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionNineChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionNine() {
-  questionNum.innerText = `9 of 10`;
-  questionEl.innerText = `What Time does Apple Products Display on Ads?`;
+  questionNum.innerText = `9 of 10`
+  questionEl.innerText = `What Time does Apple Products Show on Ads?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/time.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionNineChoiceOne()"
@@ -546,41 +528,39 @@ id="answer-three"
 >
 12:36 AM
 </button>
-`;
+`
 }
 
 // QUESTION TEN OF APPLE TRIVIA
 
 function questionTenChoiceOne() {
-  document.querySelectorAll("button")[0].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[0].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[0].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[0].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionTenChoiceTwo() {
-  document.querySelectorAll("button")[1].style.backgroundColor = "LightGreen";
-  correctAnswer();
+  document.querySelectorAll('button')[1].style.backgroundColor = 'LightGreen'
+  correctAnswer()
   setTimeout(function () {
-    wonGame();
-  }, 1000);
+    wonGame()
+  }, 1000)
 }
 
 function questionTenChoiceThree() {
-  document.querySelectorAll("button")[2].style.backgroundColor =
-    "PaleVioletRed";
-  document.querySelectorAll("button")[2].disabled = true;
-  wrongAnswer();
-  lostGame();
+  document.querySelectorAll('button')[2].style.backgroundColor = 'PaleVioletRed'
+  document.querySelectorAll('button')[2].disabled = true
+  wrongAnswer()
+  lostGame()
 }
 
 function questionTen() {
-  questionNum.innerText = `10 of 10`;
-  questionEl.innerText = `Who was in Apples Original Logo?`;
+  questionNum.innerText = `10 of 10`
+  questionEl.innerText = `Who was in Apples Original Logo?`
   imgEl.innerHTML = `
   <img style="height: 100%" src="./images/magnet.png" alt="" />
-`;
+`
   questionAnswers.innerHTML = `
 <button
   onclick="questionTenChoiceOne()"
@@ -603,5 +583,5 @@ id="answer-three"
 >
 Snoop Dogg
 </button>
-`;
+`
 }
